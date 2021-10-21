@@ -24,25 +24,28 @@ export default function Scene() {
 
   return (
     <div className="sceneContainer">
-      <h2 className="sceneTitle">Pick your scene:</h2>
-
-      <div className="sceneRadio">
-        {imgSource.map((img, index) => (
+      <div className="sceneComponents">
+        <div className="sceneRadio">
+          <h2 className="sceneTitle">Pick your scene:</h2>
           <div>
-            <label>
-              <input
-                type="radio"
-                value={img.alt}
-                name="scene"
-                checked={index === selection}
-                onClick={() => setSelection(index)}
-              />
-              {img.alt}
-            </label>
+            {imgSource.map((img, index) => (
+              <div>
+                <label>
+                  <input
+                    type="radio"
+                    value={img.alt}
+                    name="scene"
+                    checked={index === selection}
+                    onClick={() => setSelection(index)}
+                  />
+                  {img.alt}
+                </label>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
+        <img src={imgSource[selection].src} alt="" id="js-output" />
       </div>
-      <img src={imgSource[selection].src} alt="" id="js-output" />
     </div>
   );
 }
