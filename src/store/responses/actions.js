@@ -1,19 +1,20 @@
-// export const dataFetched = (eventsAndVenues) => ({
-//   type: "event/fetch",
-//   payload: eventsAndVenues, // { events: [{}, {}], venues: [{}, {}] }
-// });
+import axios from "axios";
 
-// export function fetchEventsAndVenues() {
-//   return async function thunk(dispatch, getState) {
-//     try {
-//       const response = await axios.get(`${apiUrl}/events`); // http://localhost:4000/events
-//       const venueResponse = await axios.get(`${apiUrl}/events/venues`);
-//       //   console.log("response fetch events", response.data); // [{}, {}]
-//       dispatch(
-//         dataFetched({ events: response.data, venues: venueResponse.data })
-//       ); // dispatch to backend via thunk/url
-//     } catch (e) {
-//       console.log(e.message);
-//     }
-//   };
-// }
+export const FETCH_RESPONSES = "FETCH_RESPONSES";
+
+const dataFetched = (responses) => ({
+  type: FETCH_RESPONSES,
+  payload: responses, // responses: [{}, {}]
+});
+
+export function fetchResponses() {
+  return async function thunk(dispatch, getState) {
+    try {
+      const response = await axios.get("http://localhost:4000/responses");
+      // console.log("response fetch responses", response.data); // [{}, {}]
+      dispatch(dataFetched(response.data));
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+}
