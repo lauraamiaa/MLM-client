@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import LanguageButtons from "../Buttons/LanguageButtons";
 import { selectChoice } from "../../store/responses/selector";
+import Scene from "../Scene/Scene";
+
 
 export default function Homepage() {
   const choice = useSelector(selectChoice);
@@ -13,7 +15,7 @@ export default function Homepage() {
       <Header />
       <LanguageButtons />
       <div className="homepageBody">
-        <div className="sceneContainer"></div>
+        <Scene />
       </div>
       {choice && <p>{choice.expression}</p>}
       <Footer />
