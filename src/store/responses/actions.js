@@ -7,6 +7,11 @@ const dataFetched = (responses) => ({
   payload: responses, // responses: [{}, {}]
 });
 
+export const responseChosen = (response) => ({
+  type: "RESPONSE_CHOSEN",
+  payload: response,
+});
+
 export function fetchResponses() {
   return async function thunk(dispatch, getState) {
     try {
