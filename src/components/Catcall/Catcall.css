@@ -1,0 +1,10 @@
+.attackButton {
+  background-color: #48937e;
+  padding: 10px 20px;
+  width: 110px;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 16px;
+  border-color: #48937e;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
