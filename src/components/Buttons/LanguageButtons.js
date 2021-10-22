@@ -54,6 +54,7 @@ export default function LanguageButton() {
           );
         })}
       <div> {choice && <p>{choice.expression}</p>}</div>
+      <div> {choice && <p>{choice.translation}</p>}</div>
     </div>
   );
 }
