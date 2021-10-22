@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import "./LanguageButton.css";
@@ -9,10 +9,8 @@ import { selectResponses } from "../../store/responses/selector";
 export default function LanguageButton() {
   const dispatch = useDispatch();
   const responses = useSelector(selectResponses);
-  console.log("selector", responses);
 
   useEffect(() => {
-    console.log("hello");
     dispatch(fetchResponses());
   }, [dispatch]);
 
