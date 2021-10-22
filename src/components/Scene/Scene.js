@@ -31,13 +31,14 @@ export default function Scene() {
           <h2 className="sceneTitle">Pick your scene:</h2>
           <div>
             {imgSource.map((img, index) => (
-              <div>
+              <div key={index}>
                 <label>
                   <input
                     type="radio"
                     value={img.alt}
                     name="scene"
                     checked={index === selection}
+                    readOnly={true}
                     onClick={() => setSelection(index)}
                   />
                   {img.alt}
