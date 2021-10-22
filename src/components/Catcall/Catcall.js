@@ -9,7 +9,7 @@ export default function Catcall() {
   const dispatch = useDispatch();
   const catcall = useSelector(selectCatcall);
 
-  console.log(catcall);
+  // console.log(catcall);
 
   const [attack, setAttack] = useState("");
 
