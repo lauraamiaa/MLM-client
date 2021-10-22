@@ -7,7 +7,6 @@ import LanguageButtons from "../Buttons/LanguageButtons";
 import { selectChoice } from "../../store/responses/selector";
 import Scene from "../Scene/Scene";
 
-
 export default function Homepage() {
   const choice = useSelector(selectChoice);
   return (

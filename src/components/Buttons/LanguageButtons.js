@@ -12,8 +12,9 @@ export default function LanguageButton() {
   console.log("selector", responses);
 
   useEffect(() => {
+    console.log("hello");
     dispatch(fetchResponses());
-  }, []);
+  }, [dispatch]);
 
   function getRandomResponseByLanguage(language) {
     const responsesByLanguage = responses.filter(
