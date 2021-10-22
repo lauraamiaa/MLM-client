@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 import Catcall from "../Catcall/Catcall";
+import LanguageButtons from "../Buttons/LanguageButtons";
 import "./Scene.css";
 
 export default function Scene() {
@@ -49,6 +50,7 @@ export default function Scene() {
           </div>
         </div>
         <img src={imgSource[selection].src} alt="" id="js-output" />
+        <LanguageButtons />
       </div>
     </div>
   );
