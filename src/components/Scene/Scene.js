@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+
+import Catcall from "../Catcall/Catcall";
 import "./Scene.css";
 
 export default function Scene() {
@@ -42,6 +44,7 @@ export default function Scene() {
                 </label>
               </div>
             ))}
+            <Catcall />
           </div>
         </div>
         <img src={imgSource[selection].src} alt="" id="js-output" />

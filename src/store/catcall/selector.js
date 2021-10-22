@@ -1,1 +1,1 @@
-export const selectCatcall = (reduxstate) => reduxstate.catcall.expressions;
+export const selectCatcall = (reduxstate) => reduxstate.catcall;

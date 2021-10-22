@@ -1,5 +1,22 @@
 import axios from "axios";
 export const ADDED_CATCALL = "ADDED_CATCALL";
+export const FETCHED_CATCALL = "FETCH_CATCALL";
+
+export const fetchedCatcall = (data) => ({
+  type: FETCHED_CATCALL,
+  payload: data,
+});
+
+export function fetchCatcall() {
+  return async (dispatch, getState) => {
+    try {
+      const response = await axios.get(`http://localhost:4000/catcalls`);
+      dispatch(fetchedCatcall(response.data));
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+}
 
 export const addedCatcall = (data) => ({
   type: ADDED_CATCALL,
