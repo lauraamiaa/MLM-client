@@ -4,6 +4,7 @@ export const FETCHED_CATCALL = "FETCH_CATCALL";
 export const ADDED_TO_ADMIN = "ADDED_TO_ADMIN";
 export const UPDATED_STATUS = "UPDATED_STATUS";
 export const DELETED_CATCALL = "DELETED_CATCALL";
+export const CHOSEN_CATCALL = "CHOSEN_CATCALL";
 
 export const fetchedCatcall = (data) => ({
   type: FETCHED_CATCALL,
@@ -23,6 +24,11 @@ export function fetchCatcall() {
 
 export const addedCatcall = (data) => ({
   type: ADDED_CATCALL,
+  payload: data,
+});
+
+export const chosenCatcall = (data) => ({
+  type: CHOSEN_CATCALL,
   payload: data,
 });
 
