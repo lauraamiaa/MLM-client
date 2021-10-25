@@ -69,10 +69,12 @@ input[type="radio"]:checked:after {
 
 .manSilhouette {
   right: 500px;
+  z-index: 2;
 }
 
 .womanSilhouette {
   right: 200px;
+  z-index: 2;
 }
 
 .dialogueBox {
@@ -84,7 +86,7 @@ input[type="radio"]:checked:after {
   position: absolute;
   right: 600px;
   bottom: 450px;
-  z-index: 1;
+  z-index: 2;
   padding: 5px;
   line-height: 1.6;
   font-family: "Source Sans Pro", sans-serif;
@@ -102,7 +104,7 @@ input[type="radio"]:checked:after {
   line-height: 1.6;
   font-family: "Source Sans Pro", sans-serif;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   right: 100px;
   bottom: 450px;
 }
@@ -118,7 +120,7 @@ input[type="radio"]:checked:after {
   line-height: 1.6;
   font-family: "Source Sans Pro", sans-serif;
   text-align: center;
-  z-index: 1;
+  z-index: 2;
   right: 100px;
   bottom: 20px;
 }
@@ -130,4 +132,54 @@ input[type="radio"]:checked:after {
 .footer {
   background-color: #000000;
   height: 230px;
+}
+
+.clubScene {
+  width: 1000px;
+  height: 700px;
+  position: absolute;
+  background-color: red;
+  animation: disco 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  right: 3px;
+  bottom: 6px;
+  z-index: 1;
+  opacity: 30%;
+}
+
+@keyframes disco {
+  0% {
+    background-color: red;
+  }
+  10% {
+    background-color: green;
+  }
+  20% {
+    background-color: blue;
+  }
+  30% {
+    background-color: yellow;
+  }
+  40% {
+    background-color: orange;
+  }
+  50% {
+    background-color: purple;
+  }
+  60% {
+    background-color: brown;
+  }
+  70% {
+    background-color: pink;
+  }
+  80% {
+    background-color: lime;
+  }
+  90% {
+    background-color: cyan;
+  }
+  100% {
+    background-color: teal;
+  }
 }

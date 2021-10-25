@@ -14,19 +14,19 @@ export default function Scene() {
 
   const imgSource = [
     {
-      alt: "club",
+      alt: "clubScene",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821933/Entertainment/wwzaaevsgczluzoajmvv.jpg",
     },
     {
-      alt: "office",
+      alt: "officeScene",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634819681/Entertainment/upsgd3sx74rjxkwsyl4i.jpg",
     },
     {
-      alt: "street",
+      alt: "streetScene",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821933/Entertainment/ykra8ayfpkiwteohvbuz.jpg",
     },
     {
-      alt: "train",
+      alt: "trainScene",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821710/Entertainment/elryp73h11mfmxyypm8r.jpg",
     },
   ];
@@ -59,7 +59,7 @@ export default function Scene() {
         <div>
           <div className="sceneContainer">
             <img src={imgSource[selection].src} alt="" id="js-output" />
-
+            <div className={imgSource[selection].alt}></div>
             <img
               className="manSilhouette"
               src="https://res.cloudinary.com/dveul1ne3/image/upload/v1634911052/Entertainment/ny3yhgcrsmiqpv1lvw3z.png"
