@@ -3,6 +3,7 @@ export const ADDED_CATCALL = "ADDED_CATCALL";
 export const FETCHED_CATCALL = "FETCH_CATCALL";
 export const ADDED_TO_ADMIN = "ADDED_TO_ADMIN";
 export const UPDATED_STATUS = "UPDATED_STATUS";
+export const DELETED_CATCALL = "DELETED_CATCALL";
 
 export const fetchedCatcall = (data) => ({
   type: FETCHED_CATCALL,
@@ -52,6 +53,24 @@ export function updateStatusCatcall(data) {
         { data }
       );
       dispatch(updatedStatus(response.data));
+    } catch (e) {
+      console.log(e.message);
+    }
+  };
+}
+
+export const catcallRemoved = (id) => ({
+  type: DELETED_CATCALL,
+  payload: id,
+});
+
+export function deleteCatcall(id) {
+  return async (dispatch, getState) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:4000/catcalls/${id}`
+      );
+      dispatch(catcallRemoved(id));
     } catch (e) {
       console.log(e.message);
     }
