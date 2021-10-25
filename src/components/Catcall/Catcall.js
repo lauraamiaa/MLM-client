@@ -19,9 +19,7 @@ export default function Catcall() {
 
   const onClickHarass = () => {
     const randomIndex = Math.floor(Math.random() * catcall.expressions.length);
-    console.log("the catcall", catcall);
-    console.log("random index", randomIndex);
-    const randomAttack = catcall.expressions[0];
+    const randomAttack = catcall.expressions[randomIndex];
     speak({
       text: randomAttack.expression,
       lang: "en-GB",
