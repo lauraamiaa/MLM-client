@@ -1,4 +1,9 @@
-import { ADDED_CATCALL, FETCHED_CATCALL, UPDATED_STATUS } from "./actions";
+import {
+  ADDED_CATCALL,
+  FETCHED_CATCALL,
+  UPDATED_STATUS,
+  DELETED_CATCALL,
+} from "./actions";
 
 const initialState = {
   expressions: [],
@@ -30,6 +35,16 @@ export default function reducer(state = initialState, { type, payload }) {
       return {
         ...state,
         expressions: updatedExpressions,
+      };
+    }
+
+    case DELETED_CATCALL: {
+      const filteredCatcalls = state.expressions.filter(
+        (c) => c.id !== payload
+      );
+      return {
+        ...state,
+        expressions: filteredCatcalls,
       };
     }
     default: {

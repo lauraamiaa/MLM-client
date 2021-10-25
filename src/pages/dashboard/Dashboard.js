@@ -1,6 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCatcall, updateStatusCatcall } from "../../store/catcall/actions";
+import {
+  fetchCatcall,
+  updateStatusCatcall,
+  deleteCatcall,
+} from "../../store/catcall/actions";
 import { selectCatcall } from "../../store/catcall/selector";
 
 export default function Dashboard() {
@@ -32,9 +36,18 @@ export default function Dashboard() {
               <div key={s.id}>
                 {s.expression}
                 {s.status === "pending" ? (
-                  <button onClick={() => approvedOnclickHandler(s)}>
-                    Approve
-                  </button>
+                  <div>
+                    <button onClick={() => approvedOnclickHandler(s)}>
+                      Approve
+                    </button>
+                    <button
+                      onClick={() => {
+                        dispatch(deleteCatcall(s.id));
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 ) : null}
               </div>
             );
