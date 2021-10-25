@@ -56,6 +56,25 @@ input[type="radio"]:checked:after {
   border: 3px solid #ccf656;
 }
 
+.sceneContainer {
+  position: relative;
+}
+
+.manSilhouette,
+.womanSilhouette {
+  height: 440px;
+  position: absolute;
+  bottom: 6px;
+}
+
+.manSilhouette {
+  right: 500px;
+}
+
+.womanSilhouette {
+  right: 200px;
+}
+
 .homepageBody {
   min-height: calc(80vh);
 }

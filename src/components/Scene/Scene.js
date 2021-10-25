@@ -26,7 +26,7 @@ export default function Scene() {
   ];
 
   return (
-    <div className="sceneContainer">
+    <div>
       <div className="sceneComponents">
         <div className="sceneRadio">
           <h2 className="sceneTitle">Pick your scene:</h2>
@@ -49,7 +49,24 @@ export default function Scene() {
             <Catcall />
           </div>
         </div>
-        <img src={imgSource[selection].src} alt="" id="js-output" />
+
+        <div>
+          <div className="sceneContainer">
+            <img src={imgSource[selection].src} alt="" id="js-output" />
+
+            <img
+              className="manSilhouette"
+              src="https://res.cloudinary.com/dveul1ne3/image/upload/v1634911052/Entertainment/ny3yhgcrsmiqpv1lvw3z.png"
+              alt="man"
+            />
+            <img
+              className="womanSilhouette"
+              src="https://res.cloudinary.com/dveul1ne3/image/upload/v1634911052/Entertainment/dmizqmtilv1cdpclkbgq.png"
+              alt="woman"
+            />
+          </div>
+        </div>
+
         <LanguageButtons />
       </div>
     </div>
