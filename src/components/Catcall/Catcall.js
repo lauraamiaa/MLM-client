@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSpeechSynthesis } from "react-speech-kit";
 
 import "./Catcall.css";
-import { fetchCatcall } from "../../store/catcall/actions";
+import { fetchCatcall, chosenCatcall } from "../../store/catcall/actions";
 import { selectCatcall } from "../../store/catcall/selector";
 
 export default function Catcall() {
@@ -19,9 +19,7 @@ export default function Catcall() {
 
   const onClickHarass = () => {
     const randomIndex = Math.floor(Math.random() * catcall.expressions.length);
-    console.log("the catcall", catcall);
-    console.log("random index", randomIndex);
-    const randomAttack = catcall.expressions[0];
+    const randomAttack = catcall.expressions[randomIndex];
     speak({
       text: randomAttack.expression,
       lang: "en-GB",
@@ -29,6 +27,7 @@ export default function Catcall() {
       rate: 1,
     });
     setAttack(randomAttack);
+    dispatch(chosenCatcall(randomAttack));
   };
 
   return (
@@ -39,7 +38,6 @@ export default function Catcall() {
           Attack!
         </button>
       )}
-      {!attack ? null : <p className="dialogueBox">{attack.expression}</p>}
     </div>
   );
 }
