@@ -17,6 +17,9 @@
   border: 3px solid #f230aa;
   border-radius: 4px;
   position: absolute;
+  right: 1000px;
+  bottom: 550px;
+  z-index: 1;
   padding: 5px;
   line-height: 1.6;
   font-family: "Source Sans Pro", sans-serif;

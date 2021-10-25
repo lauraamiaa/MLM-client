@@ -18,10 +18,10 @@ export default function Catcall() {
   }, [dispatch]);
 
   const onClickHarass = () => {
-    const randomAttack =
-      catcall.expressions[
-        Math.floor(Math.random() * catcall.expressions.length)
-      ];
+    const randomIndex = Math.floor(Math.random() * catcall.expressions.length);
+    console.log("the catcall", catcall);
+    console.log("random index", randomIndex);
+    const randomAttack = catcall.expressions[0];
     speak({
       text: randomAttack.expression,
       lang: "en-GB",
@@ -34,10 +34,12 @@ export default function Catcall() {
   return (
     <div>
       <h2 className="sceneTitle">Click to cat call:</h2>
-      <button className="attackButton" onClick={onClickHarass}>
-        Attack!
-      </button>
-      <p className="dialogueBox">{attack.expression}</p>
+      {!catcall.expressions.length ? null : (
+        <button className="attackButton" onClick={onClickHarass}>
+          Attack!
+        </button>
+      )}
+      {!attack ? null : <p className="dialogueBox">{attack.expression}</p>}
     </div>
   );
 }
