@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSpeechSynthesis } from "react-speech-kit";
 
 import "./Catcall.css";
-import { fetchCatcall } from "../../store/catcall/actions";
+import { fetchCatcall, chosenCatcall } from "../../store/catcall/actions";
 import { selectCatcall } from "../../store/catcall/selector";
 
 export default function Catcall() {
@@ -27,6 +27,7 @@ export default function Catcall() {
       rate: 1,
     });
     setAttack(randomAttack);
+    dispatch(chosenCatcall(randomAttack));
   };
 
   return (
@@ -37,7 +38,6 @@ export default function Catcall() {
           Attack!
         </button>
       )}
-      {!attack ? null : <p className="dialogueBox">{attack.expression}</p>}
     </div>
   );
 }
