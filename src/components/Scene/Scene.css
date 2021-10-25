@@ -91,6 +91,38 @@ input[type="radio"]:checked:after {
   text-align: center;
 }
 
+.replyDialogueBox {
+  width: 200px;
+  min-height: 20px;
+  background-color: #ffffff;
+  border: 3px solid #f230aa;
+  border-radius: 4px;
+  position: absolute;
+  padding: 5px;
+  line-height: 1.6;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  z-index: 1;
+  right: 100px;
+  bottom: 450px;
+}
+
+.translationBox {
+  width: 200px;
+  min-height: 20px;
+  background-color: #ffffff;
+  border: 3px solid #ccf656;
+  border-radius: 4px;
+  position: absolute;
+  padding: 5px;
+  line-height: 1.6;
+  font-family: "Source Sans Pro", sans-serif;
+  text-align: center;
+  z-index: 1;
+  right: 100px;
+  bottom: 20px;
+}
+
 .homepageBody {
   min-height: calc(80vh);
 }
