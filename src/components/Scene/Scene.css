@@ -1,7 +1,3 @@
-.sceneContainer {
-  margin-left: 80px;
-}
-
 .sceneTitle {
   font-family: "Arvo", serif;
   font-size: 20px;
@@ -9,10 +5,8 @@
 
 .sceneComponents {
   display: flex;
-}
-
-.sceneRadio {
-  margin-right: 85px;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .sceneRadio label {
@@ -29,6 +23,7 @@
 
 .sceneRadio label:hover {
   background-color: #ccf656;
+  cursor: pointer;
 }
 
 input[type="radio"]:after {

@@ -41,13 +41,20 @@ export default function LanguageButton() {
 
   return (
     <div>
+      <h2 className="sceneTitle">
+        Choose a language <br />
+        to reply:
+      </h2>
       {responses &&
         [
           ...new Set(responses.map((response) => response.language.language)),
         ].map((language, ix) => {
           return (
             <div key={ix}>
-              <button onClick={() => getRandomResponseByLanguage(language)}>
+              <button
+                className="languageButtons"
+                onClick={() => getRandomResponseByLanguage(language)}
+              >
                 {language}
               </button>
             </div>
