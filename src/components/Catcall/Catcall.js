@@ -22,7 +22,12 @@ export default function Catcall() {
       catcall.expressions[
         Math.floor(Math.random() * catcall.expressions.length)
       ];
-    speak({ text: randomAttack.expression });
+    speak({
+      text: randomAttack.expression,
+      lang: "en-GB",
+      pitch: 0.7,
+      rate: 1,
+    });
     setAttack(randomAttack);
   };
 
