@@ -58,12 +58,6 @@ export default function LanguageButton() {
             </div>
           );
         })}
-      <div>
-        {choice && <p className="replyDialogueBox">{choice.expression}</p>}
-      </div>
-      <div>
-        {choice && <p className="translationBox">"{choice.translation}"</p>}
-      </div>
     </div>
   );
 }
