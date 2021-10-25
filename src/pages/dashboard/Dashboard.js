@@ -17,9 +17,11 @@ export default function Dashboard() {
     dispatch(updateStatusCatcall(data));
   }
 
-  //   const sortedCatcalls = [...catcall.expressions].sort((a, b) => {
-  //     return a.status - b.status;
-  //   });
+  const sortedCatcalls = catcall.expressions.sort((a, b) => {
+    return b.status - a.status;
+  });
+
+  console.log("sorted catcalls", sortedCatcalls);
   return (
     <div>
       <h1>Dashboard</h1>
