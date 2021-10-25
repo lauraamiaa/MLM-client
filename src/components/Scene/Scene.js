@@ -1,11 +1,14 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 import Catcall from "../Catcall/Catcall";
 import LanguageButtons from "../Buttons/LanguageButtons";
+import { selectChosenCatcall } from "../../store/catcall/selector";
 import "./Scene.css";
 
 export default function Scene() {
   const [selection, setSelection] = useState(0);
+  const chosenCatcall = useSelector(selectChosenCatcall);
   const imgSource = [
     {
       alt: "club",
@@ -64,6 +67,9 @@ export default function Scene() {
               src="https://res.cloudinary.com/dveul1ne3/image/upload/v1634911052/Entertainment/dmizqmtilv1cdpclkbgq.png"
               alt="woman"
             />
+            {!chosenCatcall ? null : (
+              <p className="dialogueBox">{chosenCatcall.expression}</p>
+            )}
           </div>
         </div>
 
