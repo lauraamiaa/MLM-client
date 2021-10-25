@@ -25,15 +25,19 @@ export default function Footer() {
             your language of choice, and tell your harasser what you really
             think.
           </p>
+          <h6 className="credits">
+            This website has been created by Marijn Verbiesen, Mariel Crespo and
+            Laura Miatkowski.
+          </h6>
         </div>
 
         <div className="footerSubmit">
           <h1 className="footerHeadings">Submit cat calls</h1>
           <p className="footerText">
-            Have you been assaulted, and would you like us to publish your
+            Have you been assaulted, and would you like us to publish a received
             verbal attack?
             <br />
-            Then submit your crazy, insane, disgusting received cat call below:
+            Then submit your crazy, insane, disgusting cat call below:
           </p>
 
           <form>
@@ -45,17 +49,17 @@ export default function Footer() {
               cols="60"
             ></textarea>
             <br />
-            <button type="submit" onClick={submitCatcall} value="Submit">
+            <button
+              className="submitCatcall"
+              type="submit"
+              onClick={submitCatcall}
+              value="Submit"
+            >
               submit
             </button>
           </form>
         </div>
       </div>
-
-      <h6 className="credits">
-        This website has been created by Marijn Verbiesen, Mariel Crespo and
-        Laura Miatkowski.
-      </h6>
     </div>
   );
 }
