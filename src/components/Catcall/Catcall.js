@@ -37,7 +37,7 @@ export default function Catcall() {
       <button className="attackButton" onClick={onClickHarass}>
         Attack!
       </button>
-      <p>{attack.expression}</p>
+      <p className="dialogueBox">{attack.expression}</p>
     </div>
   );
 }
