@@ -32,8 +32,6 @@ export default function LanguageButton() {
 
   useEffect(() => {
     if (choice) {
-      console.log("choiceChange", choice.audio);
-      // console.log(audioElement.current);
       const audioElement = new Audio(choice.audio);
       audioElement.play();
     }
@@ -60,8 +58,12 @@ export default function LanguageButton() {
             </div>
           );
         })}
-      <div> {choice && <p>{choice.expression}</p>}</div>
-      <div> {choice && <p>{choice.translation}</p>}</div>
+      <div>
+        {choice && <p className="replyDialogueBox">{choice.expression}</p>}
+      </div>
+      <div>
+        {choice && <p className="translationBox">"{choice.translation}"</p>}
+      </div>
     </div>
   );
 }
