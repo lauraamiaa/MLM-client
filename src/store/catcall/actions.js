@@ -1,4 +1,5 @@
 import axios from "axios";
+import { selectToken } from "../admin/selector";
 export const ADDED_CATCALL = "ADDED_CATCALL";
 export const FETCHED_CATCALL = "FETCH_CATCALL";
 export const ADDED_TO_ADMIN = "ADDED_TO_ADMIN";
@@ -52,11 +53,14 @@ export const updatedStatus = (data) => ({
 
 export function updateStatusCatcall(data) {
   return async (dispatch, getState) => {
+    const token = selectToken(getState());
+    console.log("token", token);
     try {
       console.log("data", data);
       const response = await axios.patch(
         `http://localhost:4000/catcalls/${data.id}`,
-        { data }
+        { data },
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(updatedStatus(response.data));
     } catch (e) {
@@ -72,9 +76,12 @@ export const catcallRemoved = (id) => ({
 
 export function deleteCatcall(id) {
   return async (dispatch, getState) => {
+    const token = selectToken(getState());
+
     try {
       const response = await axios.delete(
-        `http://localhost:4000/catcalls/${id}`
+        `http://localhost:4000/catcalls/${id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(catcallRemoved(id));
     } catch (e) {
