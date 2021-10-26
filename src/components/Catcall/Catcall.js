@@ -32,7 +32,7 @@ export default function Catcall() {
 
   return (
     <div>
-      <h2 className="sceneTitle">Click to cat call:</h2>
+      <h2 className="sceneTitle">Click to catcall:</h2>
       {!catcall.expressions.length ? null : (
         <button className="attackButton" onClick={onClickHarass}>
           Attack!
