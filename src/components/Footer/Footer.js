@@ -14,13 +14,15 @@ export default function Footer() {
     setExpression("");
   }
   return (
-    <div className="footer">
+    <div className="footerContainer">
       <div className="footerContent">
         <div className="footerAbout">
           <h1 className="footerHeadings">What is this about?</h1>
           <p className="footerText">
+            Catcalling is the act of shouting harassing and often sexually
+            suggestive, threatening, or derisive comments at someone publicly.
+            <br /> <br />
             This site is dedicated to every single victim of sexual harassment!
-            <br />
             Put your catcaller on the spot with these fierce comebacks. Choose
             your language of choice, and tell your harasser what you really
             think.
