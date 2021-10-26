@@ -22,7 +22,6 @@ export default function Catcall() {
     const randomAttack = catcall.expressions[randomIndex];
     speak({
       text: randomAttack.expression,
-      lang: "en-GB",
       pitch: 0.7,
       rate: 1,
     });
