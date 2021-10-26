@@ -18,8 +18,11 @@ export default function Catcall() {
   }, [dispatch]);
 
   const onClickHarass = () => {
-    const randomIndex = Math.floor(Math.random() * catcall.expressions.length);
-    const randomAttack = catcall.expressions[randomIndex];
+    const approvedCatcalls = catcall.expressions.filter((c) => {
+      return c.status === "approved";
+    });
+    const randomIndex = Math.floor(Math.random() * approvedCatcalls.length);
+    const randomAttack = approvedCatcalls[randomIndex];
     speak({
       text: randomAttack.expression,
       lang: "en-GB",
