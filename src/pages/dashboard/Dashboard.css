@@ -1,0 +1,50 @@
+.dash-body {
+  margin: 20px;
+  line-height: 40px;
+}
+
+.dash-title {
+  font-size: 50px;
+  font: "Arvo", serif;
+  color: #48937e;
+  margin-bottom: 5px;
+  margin-left: 50px;
+}
+
+.buttons-dash {
+  display: flex;
+}
+
+.btn-dash-app {
+  margin: 5px;
+  background-color: #48937e;
+  flex-direction: row;
+  color: white;
+  font-weight: bold;
+  border: #48937e;
+}
+
+.btn-dash-rem {
+  margin: 5px;
+  background-color: red;
+  flex-direction: row;
+  color: white;
+  font-weight: bold;
+  border: red;
+}
+
+.dash-expressions {
+  font-size: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+.btn-logout {
+  background-color: violet;
+  color: white;
+  border: violet;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
+  margin-left: 50px;
+}
