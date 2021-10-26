@@ -27,7 +27,7 @@ export default function LoginPage() {
   }
   return (
     <div className="body">
-      <form>
+      <form className="login-form">
         <label for="email">Email</label>
         <input
           className="input-login"
