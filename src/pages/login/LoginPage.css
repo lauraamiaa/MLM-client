@@ -1,0 +1,13 @@
+.body {
+  padding: 40px;
+  background-color: pink;
+  font-size: 20px;
+}
+
+.input-login {
+  margin: 10px;
+}
+
+.btn-login {
+  margin: 10px;
+}
