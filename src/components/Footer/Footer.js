@@ -21,7 +21,7 @@ export default function Footer() {
           <p className="footerText">
             This site is dedicated to every single victim of sexual harassment!
             <br />
-            Put your cat caller on the spot with these fierce comebacks. Choose
+            Put your catcaller on the spot with these fierce comebacks. Choose
             your language of choice, and tell your harasser what you really
             think.
           </p>
@@ -32,12 +32,12 @@ export default function Footer() {
         </div>
 
         <div className="footerSubmit">
-          <h1 className="footerHeadings">Submit cat calls</h1>
+          <h1 className="footerHeadings">Submit catcalls</h1>
           <p className="footerText">
             Have you been assaulted, and would you like us to publish a received
             verbal attack?
             <br />
-            Then submit your crazy, insane, disgusting cat call below:
+            Then submit your crazy, insane, disgusting catcall below:
           </p>
 
           <form>

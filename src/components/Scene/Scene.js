@@ -60,6 +60,7 @@ export default function Scene() {
           <div className="sceneContainer">
             <img src={imgSource[selection].src} alt="" id="js-output" />
             <div className={imgSource[selection].alt}></div>
+
             <img
               className="manSilhouette"
               src="https://res.cloudinary.com/dveul1ne3/image/upload/v1634911052/Entertainment/ny3yhgcrsmiqpv1lvw3z.png"
