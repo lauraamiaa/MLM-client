@@ -14,19 +14,21 @@ export default function Scene() {
 
   const imgSource = [
     {
-      alt: "clubScene",
+      id: "clubScene",
+      alt: "club",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821933/Entertainment/wwzaaevsgczluzoajmvv.jpg",
     },
     {
-      alt: "officeScene",
+      alt: "office",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634819681/Entertainment/upsgd3sx74rjxkwsyl4i.jpg",
     },
     {
-      alt: "streetScene",
+      id: "streetScene",
+      alt: "street",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821933/Entertainment/ykra8ayfpkiwteohvbuz.jpg",
     },
     {
-      alt: "trainScene",
+      alt: "train",
       src: "https://res.cloudinary.com/dveul1ne3/image/upload/v1634821710/Entertainment/elryp73h11mfmxyypm8r.jpg",
     },
   ];
@@ -42,7 +44,7 @@ export default function Scene() {
                 <label>
                   <input
                     type="radio"
-                    value={img.alt}
+                    value={img.id}
                     name="scene"
                     checked={index === selection}
                     readOnly={true}
@@ -59,7 +61,7 @@ export default function Scene() {
         <div>
           <div className="sceneContainer">
             <img src={imgSource[selection].src} alt="" id="js-output" />
-            <div className={imgSource[selection].alt}></div>
+            <div className={imgSource[selection].id}></div>
 
             <img
               className="manSilhouette"
