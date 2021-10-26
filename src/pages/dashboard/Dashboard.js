@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { logOut } from "../../store/admin/actions";
 import {
   fetchCatcall,
   updateStatusCatcall,
@@ -8,6 +9,7 @@ import {
 import { selectCatcall } from "../../store/catcall/selector";
 import { selectAdmin } from "../../store/admin/selector";
 import { useHistory } from "react-router-dom";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -30,26 +32,33 @@ export default function Dashboard() {
     dispatch(updateStatusCatcall(data));
   }
 
-  const sortedCatcalls = catcall.expressions.sort((a, b) => {
-    return b.status - a.status;
-  });
+  function logOutFunction(event) {
+    event.preventDefault();
+    dispatch(logOut());
+  }
 
-  console.log("sorted catcalls", sortedCatcalls);
   return (
-    <div>
-      <h1>Dashboard</h1>
-      <div>
+    <div className="dash-body">
+      <h1 className="dash-title">Dashboard</h1>
+      <button className="btn-logout" type="submit" onClick={logOutFunction}>
+        Logout
+      </button>{" "}
+      <div className="dash-expressions">
         {catcall.expressions &&
           catcall.expressions.map((s) => {
             return (
-              <div key={s.id}>
+              <div key={s.id} className="buttons-dash">
                 {s.expression}
                 {s.status === "pending" ? (
-                  <div>
-                    <button onClick={() => approvedOnclickHandler(s)}>
+                  <div className="buttons-dash">
+                    <button
+                      className="btn-dash-app"
+                      onClick={() => approvedOnclickHandler(s)}
+                    >
                       Approve
                     </button>
                     <button
+                      className="btn-dash-rem"
                       onClick={() => {
                         dispatch(deleteCatcall(s.id));
                       }}
