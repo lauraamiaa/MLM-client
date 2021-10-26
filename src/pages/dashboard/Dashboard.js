@@ -6,14 +6,23 @@ import {
   deleteCatcall,
 } from "../../store/catcall/actions";
 import { selectCatcall } from "../../store/catcall/selector";
+import { selectAdmin } from "../../store/admin/selector";
+import { useHistory } from "react-router-dom";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
   const catcall = useSelector(selectCatcall);
-  console.log("catcall", catcall);
+  const admin = useSelector(selectAdmin);
+  const history = useHistory();
 
   useEffect(() => {
     dispatch(fetchCatcall());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!admin.token) {
+      history.push("/");
+    }
   }, [dispatch]);
 
   function approvedOnclickHandler(catcall) {

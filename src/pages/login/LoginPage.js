@@ -1,23 +1,36 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { login } from "../../store/admin/actions";
+import { login, logOut } from "../../store/admin/actions";
+import { useHistory } from "react-router-dom";
+import "./LoginPage.css";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const dispatch = useDispatch();
+  const history = useHistory();
 
   function submitForm(event) {
     event.preventDefault();
-    dispatch(login(email, password));
+    dispatch(login(email, password, redirectDashboard));
     setEmail("");
     setPassword("");
   }
+
+  function redirectDashboard() {
+    history.push("/admin");
+  }
+
+  function logOutFunction(event) {
+    event.preventDefault();
+    dispatch(logOut());
+  }
   return (
-    <div>
+    <div className="body">
       <form>
         <label for="email">Email</label>
         <input
+          className="input-login"
           type="text"
           placeholder="Email"
           name="email"
@@ -27,15 +40,19 @@ export default function LoginPage() {
         ></input>
         <label for="password">Password</label>
         <input
-          type="text"
+          className="input-login"
+          type="password"
           placeholder="Password"
           name="password"
           value={password}
           onChange={(event) => setPassword(event.target.value)}
           required
         ></input>
-        <button type="submit" onClick={submitForm}>
+        <button className="btn-login" type="submit" onClick={submitForm}>
           Login
+        </button>
+        <button className="btn-login" type="submit" onClick={logOutFunction}>
+          Logout
         </button>
       </form>
     </div>
