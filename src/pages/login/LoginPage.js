@@ -5,8 +5,8 @@ import { useHistory } from "react-router-dom";
 import "./LoginPage.css";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("admin@admin.com");
+  const [password, setPassword] = useState("1234");
   const dispatch = useDispatch();
   const history = useHistory();
 
