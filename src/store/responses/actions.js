@@ -16,7 +16,9 @@ export const responseChosen = (response) => ({
 export function fetchResponses() {
   return async function thunk(dispatch, getState) {
     try {
-      const response = await axios.get("http://localhost:4000/responses");
+      const response = await axios.get(
+        "https://bark-back-bitches.herokuapp.com/responses"
+      );
       dispatch(dataFetched(response.data));
     } catch (e) {
       console.log(e.message);

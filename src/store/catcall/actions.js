@@ -15,7 +15,9 @@ export const fetchedCatcall = (data) => ({
 export function fetchCatcall() {
   return async (dispatch, getState) => {
     try {
-      const response = await axios.get(`http://localhost:4000/catcalls`);
+      const response = await axios.get(
+        `https://bark-back-bitches.herokuapp.com/catcalls`
+      );
       dispatch(fetchedCatcall(response.data));
     } catch (e) {
       console.log(e.message);
@@ -36,9 +38,12 @@ export const chosenCatcall = (data) => ({
 export function addCatcall(expression) {
   return async (dispatch, getState) => {
     try {
-      const response = await axios.post(`http://localhost:4000/catcalls`, {
-        expression,
-      });
+      const response = await axios.post(
+        `https://bark-back-bitches.herokuapp.com/catcalls`,
+        {
+          expression,
+        }
+      );
       dispatch(addedCatcall(response.data));
     } catch (e) {
       console.log(e.message);
@@ -58,7 +63,7 @@ export function updateStatusCatcall(data) {
     try {
       console.log("data", data);
       const response = await axios.patch(
-        `http://localhost:4000/catcalls/${data.id}`,
+        `https://bark-back-bitches.herokuapp.com/catcalls/${data.id}`,
         { data },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -80,7 +85,7 @@ export function deleteCatcall(id) {
 
     try {
       const response = await axios.delete(
-        `http://localhost:4000/catcalls/${id}`,
+        `https://bark-back-bitches.herokuapp.com/catcalls/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
       dispatch(catcallRemoved(id));
