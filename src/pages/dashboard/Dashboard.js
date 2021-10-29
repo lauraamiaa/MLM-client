@@ -35,6 +35,7 @@ export default function Dashboard() {
   function logOutFunction(event) {
     event.preventDefault();
     dispatch(logOut());
+    history.push("/");
   }
 
   return (
