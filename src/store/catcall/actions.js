@@ -84,7 +84,7 @@ export function deleteCatcall(id) {
     const token = selectToken(getState());
 
     try {
-      const response = await axios.delete(
+      await axios.delete(
         `https://bark-back-bitches.herokuapp.com/catcalls/${id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );

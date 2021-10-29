@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useSpeechSynthesis } from "react-speech-kit";
 
@@ -10,8 +10,6 @@ export default function Catcall() {
   const dispatch = useDispatch();
   const catcall = useSelector(selectCatcall);
   const { speak } = useSpeechSynthesis();
-
-  const [attack, setAttack] = useState("");
 
   useEffect(() => {
     dispatch(fetchCatcall());
@@ -28,7 +26,6 @@ export default function Catcall() {
       pitch: 0.7,
       rate: 1,
     });
-    setAttack(randomAttack);
     dispatch(chosenCatcall(randomAttack));
   };
 

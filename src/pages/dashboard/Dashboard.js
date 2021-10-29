@@ -25,7 +25,8 @@ export default function Dashboard() {
     if (!admin.token) {
       history.push("/");
     }
-  }, [dispatch]);
+    // eslint-disable-next-line
+  }, [history]);
 
   function approvedOnclickHandler(catcall) {
     const data = { id: catcall.id, status: "approved" };
